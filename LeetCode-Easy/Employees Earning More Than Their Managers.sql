@@ -33,12 +33,9 @@
 -- Explanation: Joe is the only employee who earns more than his manager.
 
 -- Write your PostgreSQL query statement below
-WITH t1 AS (SELECT a1.id,a1.name,a1.salary,a1.managerid ,
-                   a2.name manager_name,a2.salary manager_salary
-            FROM Employee a1
-            JOIN Employee a2
-            ON a1.managerId = a2.id
-            )
-SELECT name AS Employee 
-FROM t1
-WHERE salary > manager_salary 
+SELECT a1.name Employee
+FROM Employee a1
+JOIN Employee a2
+ON a1.managerId = a2.id
+WHERE a1.salary > a2.salary
+
