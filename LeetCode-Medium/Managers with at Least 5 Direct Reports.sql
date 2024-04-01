@@ -44,3 +44,9 @@ SELECT Employee.name
 FROM Employee
 INNER JOIN t1 
 ON t1.managerId = Employee.id
+
+-- Write your PostgreSQL query statement below
+-- SELECT name
+-- FROM Employee
+-- WHERE id IN (SELECT managerId FROM Employee GROUP BY managerId HAVING COUNT(managerId )>=5)
+
